@@ -13,11 +13,14 @@
  	
   <span id="qqLoginBtn"></span>
   <script type="text/javascript">
-  // QC.Login({
-  //        btnId:"qqLoginBtn"    //插入按钮的节点id
-  // });
-  // var oOpts="oOpts:{appId:'101148232',redirectURI:'http://liurongchen.com'}"
-  QC.Login.showPopup()
+  QC.Login({
+         btnId:"qqLoginBtn"    //插入按钮的节点id
+  });
+  QC.Login.getMe(function(openId, accessToken){
+    alert(openId);
+    alert(accessToken);
+  })
+  // QC.Login.showPopup()
   </script>
   
   </head>
