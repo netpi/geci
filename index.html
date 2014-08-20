@@ -15,9 +15,13 @@
   <script type="text/javascript">
   QC.Login({
          btnId:"qqLoginBtn"    //插入按钮的节点id
+  },function (reqData , opts) {
+      alert(reqData);
+      alert(opts);
+      alert(reqData.nickname)
   });
   // QC.Login.getMe(function(openId, accessToken){
-    
+
   // })
   // QC.Login.showPopup()
   </script>
