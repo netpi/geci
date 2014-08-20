@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html xmlns:wb="http://open.weibo.com/wb" lang="zh-cn" >
   <head>
     <meta charset="utf-8">
     <meta http-equiv="keywords" content="喵小姐_辽工大_辽工大校花_刘容辰_割辞喵_割辞_辽宁工程技术大学_七夕情人节_情人节献礼_TOSUN动漫社_辽工大微博协会_辽工大广播台_Cosplay_辽工大美女_辽工大代购">
@@ -9,34 +9,52 @@
     <meta property="wb:webmaster" content="42f12c7bddd9e823" />
     <!-- <meta http-equiv="Refresh" content="0; url=http://gecimiao.duapp.com" />  -->
     <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101148232" data-redirecturi="http://liurongchen.com" charset="utf-8" data-callback="true"></script>
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=2679154238&debug=true" type="text/javascript" charset="utf-8"></script>
+
     <title>辽工大美女-喵小姐-割辞</title>
     
  	
   <span id="qqLoginBtn"></span>
+  <hr>
+  <wb:share-button type="button" size="middle"> </wb:share-button>
   <script type="text/javascript">
-  QC.Login({
-         btnId:"qqLoginBtn"    //插入按钮的节点id
-  },function (reqData , opts) {
-       var dom = document.getElementById(opts['btnId']),
-       _logoutTemplate=[
-            //头像
-            '<span><img src="{figureurl}" class="{size_key}"/></span>',
-            //昵称
-            '<span>{nickname}</span>',
-            //退出
-            '<span><a href="javascript:QC.Login.signOut();">退出</a></span>'    
-       ].join("");
-       dom && (dom.innerHTML = QC.String.format(_logoutTemplate, {
-           nickname : QC.String.escHTML(reqData.nickname), //做xss过滤
-           figureurl : reqData.figureurl
-         }));
-      // alert(reqData);
-      // alert(opts);pqc
-      // alert(reqData.nickname)
-  },function (opts) {
-    alert(opts.btnId);
+      QC.Login({
+             btnId:"qqLoginBtn"    //插入按钮的节点id
+      },function (reqData , opts) {
+           var dom = document.getElementById(opts['btnId']),
+           _logoutTemplate=[
+                //头像
+                '<span><img src="{figureurl}" class="{size_key}"/></span>',
+                //昵称
+                '<span>{nickname}</span>',
+                //退出
+                '<span><a href="javascript:QC.Login.signOut();">退出</a></span>'    
+           ].join("");
+           dom && (dom.innerHTML = QC.String.format(_logoutTemplate, {
+               nickname : QC.String.escHTML(reqData.nickname), //做xss过滤
+               figureurl : reqData.figureurl
+             }));
+          // alert(reqData);
+          // alert(opts);pqc
+          // alert(reqData.nickname)
+      },function (opts) {
+        alert(opts.btnId);
+      });
+  </script>
+  <script type="text/javascript">
+    WB2.anyWhere(function(W){
+    W.parseCMD("/users/show.json", function(sResult, bStatus){
+        try{
+            //to do something...
+        }catch(e){}
+    },{
+        uid: '2679154238'
+    }{
+        method: 'get'
+    });
   });
 
+  </script>
   </head>
   <body>
   	 
