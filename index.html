@@ -16,6 +16,7 @@
   QC.Login({
          btnId:"qqLoginBtn"    //插入按钮的节点id
   },function (reqData , opts) {
+       var dom = document.getElementById(opts['btnId']),
        _logoutTemplate=[
             //头像
             '<span><img src="{figureurl}" class="{size_key}"/></span>',
@@ -24,9 +25,11 @@
             //退出
             '<span><a href="javascript:QC.Login.signOut();">退出</a></span>'    
        ].join("");
-      alert(reqData);
-      alert(opts);
-      alert(reqData.nickname)
+      // alert(reqData);
+      // alert(opts);
+      // alert(reqData.nickname)
+  },function (opts) {
+    alert(opts.btnId);
   });
   // QC.Login.getMe(function(openId, accessToken){
 
