@@ -95,6 +95,7 @@
         // Expose stringifyJSON to the global object
         window.stringifyJSON = stringifyJSON;
         }()); 
+</script>
   <script type="text/javascript">
       QC.Login({
              btnId:"qqLoginBtn"    //插入按钮的节点id
@@ -128,7 +129,7 @@
           callback: {
               login: function (o) { //登录后的回调函数
                   // alert(o.toJSONString())
-                   alert(stringifyJSON(o)) 
+                   // alert(stringifyJSON(o)) 
                   alert("login: " + o.screen_name)
               },
               logout: function () { //退出后的回调函数
@@ -143,7 +144,7 @@
   </script>
   <script>
   var a={a:'b'}
-  // alert(stringifyJSON(a))
+  alert(stringifyJSON(a))
   </script> 
   </head>
   <body>
