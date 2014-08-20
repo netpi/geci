@@ -18,148 +18,151 @@
     <span id="qqLoginBtn"></span>
     <hr>
     <wb:share-button type="button" size="middle"></wb:share-button>
+    <wb:login-button type="3,2" onlogin="login" onlogout="logout" ></wb:login-button>
     <hr>
     <!--  <wb:login-button type="3,2" onlogin="login" onlogout="logout"></wb:login-button> -->
     <!-- <wb:login-button type="button" size="middle"> </wb:login-button> -->
      <script>
-    //   (function() {
-    //       "use strict";
-    //       var escapable = /[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,
-    //           meta = {
-    //               '\b': '\\b',
-    //               '\t': '\\t',
-    //               '\n': '\\n',
-    //               '\f': '\\f',
-    //               '\r': '\\r',
-    //               '"': '\\"',
-    //               '\\': '\\\\'
-    //           };
+      //   (function() {
+      //       "use strict";
+      //       var escapable = /[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g,
+      //           meta = {
+      //               '\b': '\\b',
+      //               '\t': '\\t',
+      //               '\n': '\\n',
+      //               '\f': '\\f',
+      //               '\r': '\\r',
+      //               '"': '\\"',
+      //               '\\': '\\\\'
+      //           };
 
-    //       function quote(string) {
-    //           return '"' + string.replace(escapable, function(a) {
-    //               var c = meta[a];
-    //               return typeof c === "string" ? c : "\\u" + ("0000" + a.charCodeAt(0).toString(16)).slice(-4);
-    //           }) + '"';
-    //       }
+      //       function quote(string) {
+      //           return '"' + string.replace(escapable, function(a) {
+      //               var c = meta[a];
+      //               return typeof c === "string" ? c : "\\u" + ("0000" + a.charCodeAt(0).toString(16)).slice(-4);
+      //           }) + '"';
+      //       }
 
-    //       function f(n) {
-    //           return n < 10 ? "0" + n : n;
-    //       }
+      //       function f(n) {
+      //           return n < 10 ? "0" + n : n;
+      //       }
 
-    //       function str(key, holder) {
-    //           var i, v, len, partial, value = holder[key],
-    //               type = typeof value;
-    //           if (value && typeof value === "object" && typeof value.toJSON === "function") {
-    //               value = value.toJSON(key);
-    //               type = typeof value;
-    //           }
-    //           switch (type) {
-    //               case "string":
-    //                   return quote(value);
-    //               case "number":
-    //                   return isFinite(value) ? String(value) : "null";
-    //               case "boolean":
-    //                   return String(value);
-    //               case "object":
-    //                   if (!value) {
-    //                       return "null";
-    //                   }
-    //                   switch (Object.prototype.toString.call(value)) {
-    //                       case "[object Date]":
-    //                           return isFinite(value.valueOf()) ?
-    //                               '"' + value.getUTCFullYear() + "-" + f(value.getUTCMonth() + 1) + "-" + f(value.getUTCDate()) +
-    //                               "T" + f(value.getUTCHours()) + ":" + f(value.getUTCMinutes()) + ":" + f(value.getUTCSeconds()) + "Z" + '"' :
-    //                               "null";
-    //                       case "[object Array]":
-    //                           len = value.length;
-    //                           partial = [];
-    //                           for (i = 0; i < len; i++) {
-    //                               partial.push(str(i, value) || "null");
-    //                           }
-    //                           return "[" + partial.join(",") + "]";
-    //                       default:
-    //                           partial = [];
-    //                           for (i in value) {
-    //                               if (Object.prototype.hasOwnProperty.call(value, i)) {
-    //                                   v = str(i, value);
-    //                                   if (v) {
-    //                                       partial.push(quote(i) + ":" + v);
-    //                                   }
-    //                               }
-    //                           }
-    //                           return "{" + partial.join(",") + "}";
-    //                   }
-    //           }
-    //       }
+      //       function str(key, holder) {
+      //           var i, v, len, partial, value = holder[key],
+      //               type = typeof value;
+      //           if (value && typeof value === "object" && typeof value.toJSON === "function") {
+      //               value = value.toJSON(key);
+      //               type = typeof value;
+      //           }
+      //           switch (type) {
+      //               case "string":
+      //                   return quote(value);
+      //               case "number":
+      //                   return isFinite(value) ? String(value) : "null";
+      //               case "boolean":
+      //                   return String(value);
+      //               case "object":
+      //                   if (!value) {
+      //                       return "null";
+      //                   }
+      //                   switch (Object.prototype.toString.call(value)) {
+      //                       case "[object Date]":
+      //                           return isFinite(value.valueOf()) ?
+      //                               '"' + value.getUTCFullYear() + "-" + f(value.getUTCMonth() + 1) + "-" + f(value.getUTCDate()) +
+      //                               "T" + f(value.getUTCHours()) + ":" + f(value.getUTCMinutes()) + ":" + f(value.getUTCSeconds()) + "Z" + '"' :
+      //                               "null";
+      //                       case "[object Array]":
+      //                           len = value.length;
+      //                           partial = [];
+      //                           for (i = 0; i < len; i++) {
+      //                               partial.push(str(i, value) || "null");
+      //                           }
+      //                           return "[" + partial.join(",") + "]";
+      //                       default:
+      //                           partial = [];
+      //                           for (i in value) {
+      //                               if (Object.prototype.hasOwnProperty.call(value, i)) {
+      //                                   v = str(i, value);
+      //                                   if (v) {
+      //                                       partial.push(quote(i) + ":" + v);
+      //                                   }
+      //                               }
+      //                           }
+      //                           return "{" + partial.join(",") + "}";
+      //                   }
+      //           }
+      //       }
 
-    //       function stringifyJSON(value) {
-    //           if (window.JSON && window.JSON.stringify) {
-    //               return window.JSON.stringify(value);
-    //           }
-    //           return str("", {
-    //               "": value
-    //           });
-    //       }
-    //       // Expose stringifyJSON to the global object
-    //       window.stringifyJSON = stringifyJSON;
-    //   }());
+      //       function stringifyJSON(value) {
+      //           if (window.JSON && window.JSON.stringify) {
+      //               return window.JSON.stringify(value);
+      //           }
+      //           return str("", {
+      //               "": value
+      //           });
+      //       }
+      //       // Expose stringifyJSON to the global object
+      //       window.stringifyJSON = stringifyJSON;
+      //   }());
     </script>
     <script type="text/javascript">
-    QC.Login({
-        btnId: "qqLoginBtn" //插入按钮的节点id
-    }, function(reqData, opts) {
-        // alert(stringifyJSON(reqData))
-        var dom = document.getElementById(opts['btnId']),
-            _logoutTemplate = [
-                //头像
-                '<span><img src="{figureurl}" class="{size_key}"/></span>',
-                //昵称
-                '<span>{nickname}</span>',
-                //退出
-                '<span><a href="javascript:QC.Login.signOut();">退出</a></span>'
-            ].join("");
-        dom && (dom.innerHTML = QC.String.format(_logoutTemplate, {
-            nickname: QC.String.escHTML(reqData.nickname), //做xss过滤
-            figureurl: reqData.figureurl
-        }));
-        // alert(reqData);
-        // alert(opts);pqc
-        // alert(reqData.nickname)
-    }, function(opts) {
-        alert(opts.btnId);
-    });
+      QC.Login({
+          btnId: "qqLoginBtn" //插入按钮的节点id
+      }, function(reqData, opts) {
+          // alert(stringifyJSON(reqData))
+          var dom = document.getElementById(opts['btnId']),
+              _logoutTemplate = [
+                  //头像
+                  '<span><img src="{figureurl}" class="{size_key}"/></span>',
+                  //昵称
+                  '<span>{nickname}</span>',
+                  //退出
+                  '<span><a href="javascript:QC.Login.signOut();">退出</a></span>'
+              ].join("");
+          dom && (dom.innerHTML = QC.String.format(_logoutTemplate, {
+              nickname: QC.String.escHTML(reqData.nickname), //做xss过滤
+              figureurl: reqData.figureurl
+          }));
+          // alert(reqData);
+          // alert(opts);pqc
+          // alert(reqData.nickname)
+      }, function(opts) {
+          alert(opts.btnId);
+      });
     </script>
 
     <script type="text/javascript">
-    WB2.anyWhere(function(W) {
-        W.widget.connectButton({
-            id: "wb_connect_btn",
-            type: '3,2',
-            callback: {
-                login: function(o) { //登录后的回调函数
-                    // alert(o.toJSONString())
-                    // alert(stringifyJSON(o))
-                   alert(window.JSON.stringify(o))
-                    alert("login: " + o.screen_name)
-                },
-                logout: function() { //退出后的回调函数
-                    alert('logout');
-                }
-            }
-        });
-    });
+      // WB2.anyWhere(function(W) {
+      //     W.widget.connectButton({
+      //         id: "wb_connect_btn",
+      //         type: '3,2',
+      //         callback: {
+      //             login: function(o) { //登录后的回调函数
+      //                 // alert(o.toJSONString())
+      //                 // alert(stringifyJSON(o))
+      //                alert(window.JSON.stringify(o))
+      //                 alert("login: " + o.screen_name)
+      //             },
+      //             logout: function() { //退出后的回调函数
+      //                 alert('logout');
+      //             }
+      //         }
+      //     });
+      // });
     </script>
 
     </script>
     <script>
-    var a = {
-        a: 'b'
+    function login(o) {
+      alert(o.screen_name)
     }
-    // alert(window.JSON.stringify(a))
-    // alert(stringifyJSON(a))
+     
+    function logout() {
+        alert('logout');
+    }
     </script>
 </head>
 
 <body>
 
-    <div id="wb_connect_btn"></div>
+    <!-- <div id="wb_connect_btn"></div> -->
