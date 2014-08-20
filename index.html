@@ -25,6 +25,9 @@
             //退出
             '<span><a href="javascript:QC.Login.signOut();">退出</a></span>'    
        ].join("");
+       dom && (dom.innerHTML = QC.String.format(_logoutTemplate, {
+           nickname : QC.String.escHTML(reqData.nickname), //做xss过滤
+           figureurl : reqData.figureurl
       // alert(reqData);
       // alert(opts);
       // alert(reqData.nickname)
