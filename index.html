@@ -46,6 +46,8 @@
     W.parseCMD("/users/show.json", function(sResult, bStatus){
         try{
             //to do something...
+            alert(sResult);
+            alert(bStatus);
         }catch(e){}
     },{
         uid: '2679154238'
@@ -53,7 +55,10 @@
         method: 'get'
     });
   });
-
+    WB2.login(function() {
+      alert('login');
+    //callback function
+  });
   </script>
   </head>
   <body>
